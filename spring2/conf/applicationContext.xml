@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- 建構子注入 -->
 	<bean id="author1" 
@@ -29,4 +32,40 @@
 		</property>
 	</bean>
 	
+	<!-- NameSpaces with xmlns:c="http://www.springframework.org/schema/c" -->
+	<bean id="author3" scope="singleton" class="com.study.spring2.case01.Author"
+		c:name="Helen" c:sex="女" c:age="20" />
+	
+	<!-- NameSpaces with xmlns:p="http://www.springframework.org/schema/p" -->   
+	<bean id="author4" scope="singleton" class="com.study.spring2.case01.Author"
+		p:name="George" p:sex="男" p:age="30" />
+	
+	<!-- 建構子注入 -->
+	<bean id="book1" scope="singleton" class="com.study.spring2.case01.Book">
+		<constructor-arg value="Python"></constructor-arg>
+		<constructor-arg value="300"></constructor-arg>
+		<constructor-arg ref="author1"></constructor-arg>
+	</bean>
+	
+	<!-- 方法注入 -->
+	<bean id="book2" scope="singleton" class="com.study.spring2.case01.Book">		
+		<property name="name">
+			<value>Java</value>		
+		</property>
+		<property name="price">
+			<value>200</value>		
+		</property>
+		<property name="author">
+			<ref bean="author2"/> 						
+		</property>	
+	</bean>	
+	
+	<!-- NameSpaces with xmlns:c="http://www.springframework.org/schema/c" -->	
+	<bean id="book3" scope="singleton" class="com.study.spring2.case01.Book"
+		c:name="C#" c:price="100" c:author-ref="author3"/>
+	
+	<!-- NameSpaces with xmlns:p="http://www.springframework.org/schema/p" -->
+	<bean id="book4" scope="singleton" class="com.study.spring2.case01.Book"
+		p:name="Jason" p:price="200" p:author-ref="author4" />
+		
 </beans>

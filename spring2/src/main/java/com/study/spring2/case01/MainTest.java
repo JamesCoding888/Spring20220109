@@ -9,9 +9,20 @@ public class MainTest {
 //		Author author1 = ctx.getBean(Author.class); // 只針對單一個 Class 路徑中只允許唯一 bean
 		Author author1 = (Author)ctx.getBean("author1");
 		Author author2 = (Author)ctx.getBean("author2");
+		Author author3 =(Author)ctx.getBean("author3");
+		Author author4 =(Author)ctx.getBean("author4");
 		System.out.println(author1);
 		System.out.println(author2);
-		
-		
+		System.out.println(author3);
+		System.out.println(author4);
+		// Book bean
+		Book book1 =(Book)ctx.getBean("book1");
+		Book book2 =(Book)ctx.getBean("book2");
+		Book book3 =(Book)ctx.getBean("book3");
+		Book book4 =(Book)ctx.getBean("book4");
+		System.out.println(book1);
+		System.out.println(book2);
+		System.out.println(book3);
+		System.out.println(book4);
 	}
 }
