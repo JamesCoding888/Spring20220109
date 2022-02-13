@@ -3,6 +3,30 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="person" class="com.study.spring2.case01.Person"> </bean>
+	<!-- 建構子注入 -->
+	<bean id="author1" 
+		scope="singleton"
+		class="com.study.spring2.case01.Author">
+		
+		<constructor-arg value="Mary" index="0"></constructor-arg>
+		<constructor-arg value="女" index="1"></constructor-arg>
+		<constructor-arg value="21" index="2" type="java.lang.Integer"></constructor-arg>
+	</bean>
+	
+	<!-- 方法注入 -->
+	<bean id="author2" 
+		scope="singleton"
+		class="com.study.spring2.case01.Author">
+		<property name="name">
+			<value>John</value>
+		</property>
+		<property name="sex">
+			<value>男</value>
+		</property>
+		<property name="age">
+	   <!-- <value>18</value> 客戶需求，可讓年齡為 null -->
+	   		<null></null>
+		</property>
+	</bean>
 	
 </beans>
