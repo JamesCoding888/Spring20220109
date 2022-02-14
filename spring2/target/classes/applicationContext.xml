@@ -68,4 +68,25 @@
 	<bean id="book4" scope="singleton" class="com.study.spring2.case01.Book"
 		p:name="Jason" p:price="200" p:author-ref="author4" />
 		
+		
+	<!-- Husband & Wife 範例一-->
+	<!-- NameSpaces with xmlns:c="http://www.springframework.org/schema/c" -->
+	<!-- NameSpaces with xmlns:p="http://www.springframework.org/schema/p" -->
+	<bean id="husband1" scope="singleton" class="com.study.spring2.case01.Husband" 
+		c:name="James" p:wife-ref="wife1" />
+	
+	<bean id="wife1" scope="singleton" class="com.study.spring2.case01.Wife" 
+		c:name="Marry" p:husband-ref="husband1" />
+	
+	<!-- Husband & Wife 範例二-->	
+	<!-- NameSpaces with xmlns:p="http://www.springframework.org/schema/p" -->
+	<bean id="husband2" scope="singleton" class="com.study.spring2.case01.Husband" 
+		p:name="James" p:wife-ref="wife2" />
+	
+	<bean id="wife2" scope="singleton" class="com.study.spring2.case01.Wife" 
+		p:name="Marry" p:husband-ref="husband2" />
+	
+	
+			
+		
 </beans>

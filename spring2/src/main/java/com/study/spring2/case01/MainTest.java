@@ -24,5 +24,6 @@ public class MainTest {
 		System.out.println(book2);
 		System.out.println(book3);
 		System.out.println(book4);
+	
 	}
 }
