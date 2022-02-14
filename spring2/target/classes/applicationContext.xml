@@ -73,10 +73,10 @@
 	<!-- NameSpaces with xmlns:c="http://www.springframework.org/schema/c" -->
 	<!-- NameSpaces with xmlns:p="http://www.springframework.org/schema/p" -->
 	<bean id="husband1" scope="singleton" class="com.study.spring2.case01.Husband" 
-		c:name="James" p:wife-ref="wife1" />
+		c:name="James" c:wife-ref="wife1"  />
 	
 	<bean id="wife1" scope="singleton" class="com.study.spring2.case01.Wife" 
-		c:name="Marry" p:husband-ref="husband1" />
+		c:name="Marry" c:husband="James" />
 	
 	<!-- Husband & Wife 範例二-->	
 	<!-- NameSpaces with xmlns:p="http://www.springframework.org/schema/p" -->
