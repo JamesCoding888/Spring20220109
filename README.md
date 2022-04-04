@@ -23,9 +23,9 @@ Practice - Spring20220109
 - Bean life-time - init & destroy 
 - Bean life-time - singleton & prototype 
 - Spring bean id & equals hashcode 運作機制 
-- xml - <set> 
-- xml - <map> 
-- xml - <list> 
+- xml - set 
+- xml - map
+- xml - list
 - namespace - p 
 - namespace - util
 
