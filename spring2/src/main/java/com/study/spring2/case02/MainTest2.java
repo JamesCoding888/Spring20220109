@@ -1,6 +1,6 @@
 package com.study.spring2.case02;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContext; 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainTest2 {

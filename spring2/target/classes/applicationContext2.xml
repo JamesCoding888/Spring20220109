@@ -10,6 +10,31 @@
 		init-method="init"
 		destroy-method="destroy" />
 
+	<bean id="clazz1" scope="prototype" class="com.study.spring2.case02.Clazz" 
+		p:id="501" p:name="Program" p:credit="3" />	
+	<bean id="clazz2" scope="prototype" class="com.study.spring2.case02.Clazz" 
+		p:id="502" p:name="Math" p:credit="1" /> 	
+	<bean id="clazz3" scope="prototype" class="com.study.spring2.case02.Clazz" 
+		p:id="503" p:name="English" p:credit="1" /> 
+	<bean id="clazz4" scope="prototype" class="com.study.spring2.case02.Clazz" 
+		p:id="501" p:name="Program" p:credit="3" />
+		
+	<bean id="studentOfClazz1" scope="singleton" class="com.study.spring2.case02.StudentOfClazz"
+		p:id="1001" p:name="John"
+		init-method="init"
+		destroy-method="destroy">
+		<property name="clazzs">
+			<set>
+				<ref bean="clazz1"/>
+				<ref bean="clazz2"/>
+				<ref bean="clazz4"/>					
+			</set>		
+		</property>
+	</bean>	
+</beans>
+
+
+<!--  	
 	<bean id="clazz1" class="com.study.spring2.case02.Clazz" 
 		p:id="501" p:name="Program" p:credit="3" />
 	<bean id="clazz2" class="com.study.spring2.case02.Clazz" 
@@ -29,5 +54,4 @@
 			</set>		
 		</property>
 	</bean>
-	
-</beans>
+-->	
