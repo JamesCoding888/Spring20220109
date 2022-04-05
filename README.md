@@ -28,4 +28,7 @@ Practice - Spring20220109
 - xml - list
 - namespace - p 
 - namespace - util
+- namespace-context 
+- context:property-placeholder (外部資源) 
+- FactoryBean
 
