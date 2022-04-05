@@ -3,9 +3,22 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-  	 
+	 
+	<!-- Factory Bean -->
+	<bean id="carFactory" class="com.study.spring2.case02.CarFactory"
+		init-method="init"
+		destroy-method="destroy"/>
+		
+	
+</beans>
+
+
+
+ <!--
 	<bean id="student1" scope="singleton"
 		class="com.study.spring2.case02.Student"
 		p:id="1001" p:name="John"
@@ -66,7 +79,9 @@
 				<ref bean="studentOfClazz3" />
 			</set>
 		</property>
+-->		
 		<!-- 注入到 public void setSubjects(List<String> subjects) -->
+<!-- 
 		<property name="subjects"> 
 			<list>
 				<value>Program</value>
@@ -74,7 +89,9 @@
 				<value>English</value>
 			</list>
 		</property>
+-->		
 		<!-- 注入到 public void setSalary(Map<String, Integer> salary) -->
+<!-- 
 		<property name="salary">
 			<map>
 				<entry key="base">
@@ -86,7 +103,8 @@
 			</map>
 		</property>		
 	</bean>
- 	
+ -->
+ <!--	
 	<bean id="teacher2" scope="singleton" class="com.study.spring2.case02.Teacher"
 		p:id="2" p:name="Jessica" p:studentOfClazzs-ref="studentOfClazzs"
 		p:subjects-ref="subjects" p:salary-ref="salary" />
@@ -115,7 +133,30 @@
 				<value>25000</value>
 			</entry>
 		</util:map>
- 
+ -->
+ 	<!-- 1. 資源文件加載 -->
+<!--  	 	
+ 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+ 		<property name="location" value="user.properties"></property>
+ 		<property name="ignoreUnresolvablePlaceholders" value="true"/>
+ 		<property name="order" value="1"></property>
+ 	</bean>
+ 	 
+ 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+ 		<property name="location" value="customer.properties"></property>
+ 		<property name="ignoreUnresolvablePlaceholders" value="true"/>
+ 		<property name="order" value="2"></property>
+ 	</bean>
+ --> 	 	 
+ 	<!-- 2. 資源文件加載 -->
+<!--  	
+ 	<context:property-placeholder location="user.properties,customer.properties"/>   	 
+ 	<bean id="teacher3" scope="singleton" class="com.study.spring2.case02.Teacher"
+		p:id="${teacher.id}" p:name="${teacher.name}" p:studentOfClazzs-ref="studentOfClazzs"
+		p:subjects-ref="subjects" p:salary-ref="salary" />
  	
-</beans>
-
+ 	<bean id="profession" scope="singleton" class="com.study.spring2.case02.Profession"
+		p:id="${customer.id}" p:name="${customer.name}" p:studentOfClazzs-ref="studentOfClazzs"
+		p:subjects-ref="subjects" p:salary-ref="salary" />
+	 
+-->

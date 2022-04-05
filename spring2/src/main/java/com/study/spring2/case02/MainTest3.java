@@ -1,5 +1,5 @@
 package com.study.spring2.case02;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContext; 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainTest3 {
 	public static void main(String[] args) {
@@ -13,6 +13,12 @@ public class MainTest3 {
 		Teacher s5 = (Teacher)ctx.getBean("teacher2");
 		System.out.println("================================================================================================================");
 		System.out.println(s5);
+		System.out.println("================================================================================================================");
+		Teacher s6 = (Teacher)ctx.getBean("teacher3");	
+		System.out.println(s6);
+		System.out.println("================================================================================================================");
+		Profession s7 = (Profession)ctx.getBean("profession");	
+		System.out.println(s7);
 		System.out.println("================================================================================================================");
 		((ClassPathXmlApplicationContext)ctx).close();
 	}
