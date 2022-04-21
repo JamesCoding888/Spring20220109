@@ -32,3 +32,17 @@ Practice - Spring20220109
 - context:property-placeholder (外部資源) 
 - FactoryBean
 
+20220813
+- @Autowire 
+- @Qualifier
+- Spring JavaConfig 
+- @Controller 
+- @Service 
+- @Repository 
+- @Component 
+- schema/context/spring-context-4.3.xsd
+- <context:include-filter type="assignable"> 
+- <context:include-filter type="annotation">  
+- use-default-filters="true"
+
+
