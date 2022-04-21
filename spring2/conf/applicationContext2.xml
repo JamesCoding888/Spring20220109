@@ -4,21 +4,44 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-	 
-	<!-- Factory Bean -->
-	<bean id="carFactory" class="com.study.spring2.case02.CarFactory"
-		init-method="init"
-		destroy-method="destroy"/>
-		
+	<!-- 手動配置 (字面值得配置) -->  
+	<bean id="color" class="com.study.spring2.case02.Color"
+		p:id="1" p:name="Yellow" />
 	
+	<bean id="red" class="com.study.spring2.case02.Color"
+		p:id="2" p:name="Red" />
+	<!----> 	
+	<bean id="size" class="com.study.spring2.case02.Size"
+		p:id="1" p:name="A4" />
+		 
+	<bean id="b5" class="com.study.spring2.case02.Size"
+		p:id="2" p:name="B5" />
+	<!-- 
+	<bean id="paper1" class="com.study.spring2.case02.Paper"
+		p:id="101" p:color-ref="color" p:size-ref="size" />
+	 	  --> 
+	<!-- 自動配置 autowire="constructor" / schema-c --> 
+	<bean id="paper2" class="com.study.spring2.case02.Paper"
+		c:id="102" autowire="constructor" />
+	
+	<!-- 自動配置 autowire="byType" / schema-p 
+	<bean id="paper3" class="com.study.spring2.case02.Paper"
+			p:id="103" autowire="byType" />
+			-->
+	<!-- 自動配置 autowire="byName" / schema-p -->
+	<bean id="paper4" class="com.study.spring2.case02.Paper"
+			p:id="104" autowire="byName" />
 </beans>
 
-
-
- <!--
+<!-- 
+<bean id="color2" class="com.study.spring2.case02.Color"
+		p:id="2" p:name="Orange" />
+-->
+<!--
 	<bean id="student1" scope="singleton"
 		class="com.study.spring2.case02.Student"
 		p:id="1001" p:name="John"
@@ -159,4 +182,11 @@
 		p:id="${customer.id}" p:name="${customer.name}" p:studentOfClazzs-ref="studentOfClazzs"
 		p:subjects-ref="subjects" p:salary-ref="salary" />
 	 
--->
+--> 
+	<!-- Factory Bean -->
+<!--
+	<bean id="carFactory" class="com.study.spring2.case02.CarFactory"
+		init-method="init"
+		destroy-method="destroy"/>
+ -->		
+	

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:component-scan
+		base-package="com.study.spring2.case03" use-default-filters="true">							
+	</context:component-scan>	
+</beans>
+
+
+
+<!-- Spring XML Configuration -->
+<!-- 
+	<bean class="com.study.spring2.case03.controller.UserController"></bean> 
+	<bean class="com.study.spring2.case03.service.UserServiceImpl"></bean>
+	<bean class="com.study.spring2.case03.dao.UserDaoImpl"></bean> 
+-->
+
+<!-- Spring JavaConfig -->
+<!-- 
+	<context:component-scan base-package="com.study.spring2.case03.controller"></context:component-scan> 
+	<context:component-scan base-package="com.study.spring2.case03.service"></context:component-scan> 
+	<context:component-scan base-package="com.study.spring2.case03.dao"></context:component-scan> -->
+
+<!-- Spring JavaConfig use-default-filters="false" 只會掃描 <context:include-filter> -->
+<!-- <context:component-scan base-package="com.study.spring2.case03" use-default-filters="false"> 
+	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> 
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/> 
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/> 
+	</context:component-scan> 
+-->
+
+<!-- Util 類別 可不加上 @Component -->
+<!-- 
+<context:include-filter type="assignable" expression="com.study.spring2.case03.service.Util2"/> 
+-->
+
+
+<!-- <context:exclude-filter> 和 use-default-filters="true" -->
+<!--  
+	<context:component-scan
+		base-package="com.study.spring2.case03" use-default-filters="true">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Component" />		
+	</context:component-scan>
+-->	
+<!-- <context:exclude-filter> 和 use-default-filters="false" -->
+<!--  
+	<context:component-scan
+		base-package="com.study.spring2.case03" use-default-filters="false">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Component" />		
+	</context:component-scan>
+ -->
+ 
+ <!-- <context:include-filter> 和 use-default-filters="true" -->
+<!-- 	
+	<context:component-scan
+		base-package="com.study.spring2.case03" use-default-filters="true">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Component" />								
+	</context:component-scan>	
+-->
