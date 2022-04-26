@@ -1,5 +1,5 @@
 package com.study.spring2.case03;
-import org.springframework.context.ApplicationContext;   
+import org.springframework.context.ApplicationContext;    
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.study.spring2.case03.controller.UserController;

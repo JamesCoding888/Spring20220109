@@ -10,7 +10,7 @@ public class UserServiceImpl implements UserService{
 	
 	// 自動裝配的順序 byType 在進行 byName	
 	@Autowired(required = true)
-	@Qualifier(value = "userDaoDerbyImpl")
+	@Qualifier(value = "userDaoImpl")
 	private UserDao userDao;
 	
 	public UserServiceImpl() {
