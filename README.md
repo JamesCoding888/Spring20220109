@@ -45,4 +45,14 @@ Practice - Spring20220109
 - <context:include-filter type="annotation">  
 - use-default-filters="true"
 
+20220816
+- @Autowired
+- @Qualifier 
+- @Required 
+- @Value 注入語法 - List, Set, Map 
+- user/properties 外部配置 
+- JSON 應用 
+- JavaFaker 應用
+- Google.gson 應用 
+- person.json 外部配置
 
