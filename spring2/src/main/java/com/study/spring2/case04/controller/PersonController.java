@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 
 import com.study.spring2.case04.model.Person;
 import com.study.spring2.case04.service.PersonService;
+import com.study.spring2.case04.service.PersonServiceImpl;
 
 @Controller
 public class PersonController {
