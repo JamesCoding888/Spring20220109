@@ -56,3 +56,13 @@ Practice - Spring20220109
 - Google.gson 應用 
 - person.json 外部配置
 
+20220820
+- Proxy 
+- 靜態代理 
+- 動態代理 
+- InvocationHandler
+- Proxy.newProxyInstance
+- Enhancer
+- org.springframework.cglib.proxy.MethodInterceptor
+
+
