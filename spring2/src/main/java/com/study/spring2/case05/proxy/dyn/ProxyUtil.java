@@ -1,12 +1,10 @@
 package com.study.spring2.case05.proxy.dyn;
-import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationHandler;   
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
-
 public class ProxyUtil {
-	private Object object;
-	
+	private Object object;	
 	public ProxyUtil(Object object) {
 		this.object = object;
 	}
@@ -21,20 +19,33 @@ public class ProxyUtil {
 			Object result = null;
 			try {
 				// 前置通知
+				/* 作法1:
 				System.out.println("前置 Log:" +
 								   object.getClass() + "," +
 								   method.getName() + "," +
 								   Arrays.toString(args));
+			   */
+//				/* 作法2:
+				MyLogger.before(object.getClass(), method.getName(), args);
+//				*/
 				result = method.invoke(object, args); // 代理呼叫方法
 				return result;
 				
 			} catch (Exception e) {
 				// TODO: handle exception
+				// 例外異常處理				
+				MyLogger.throwing(object.getClass(), e.getMessage());
 			} finally {
+				// 後置通知
+				/* 作法1:
 				System.out.println("後置 Log:" +
 								   object.getClass() + "," +
 								   method.getName() + "," +
 								   result);				
+				*/
+//				/* 作法2:
+				MyLogger.after(object.getClass(), method.getName(), result);
+//				*/
 			}
 			return result;			
 		};			

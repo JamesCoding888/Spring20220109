@@ -11,11 +11,8 @@ public class HelloTest {
 		// 使用 cglib
 		Enhancer enhancer = new Enhancer(); // 增強
 		enhancer.setSuperclass(Hello.class); // 目標
-		enhancer.setCallback(new MyMethodInterceptor()); // 攔截	
-		
+		enhancer.setCallback(new MyMethodInterceptor()); // 攔截			
 		Hello hello3 = (Hello)enhancer.create();
-		System.out.println(hello3.sayHello("Vincent"));
-		
+		System.out.println(hello3.sayHello("Vincent"));	
 	}
-
 }
