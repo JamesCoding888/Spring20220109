@@ -1,5 +1,5 @@
 package com.study.spring2.case05.proxy.dyn;
-import java.lang.reflect.InvocationHandler;   
+import java.lang.reflect.InvocationHandler;    
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
