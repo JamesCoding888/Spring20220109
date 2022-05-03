@@ -13,6 +13,7 @@
 		<config>conf/applicationContext3.xml</config>
 		<config>conf/applicationContext4.xml</config>
 		<config>conf/aop-config.xml</config>
+		<config>conf/aopxml-config.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
