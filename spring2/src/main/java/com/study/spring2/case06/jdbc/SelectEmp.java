@@ -22,7 +22,6 @@ public class SelectEmp {
 		// 現在 emp 資料表中有幾筆資料 ?
 		sql = "select count(*) from emp";
 		Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
-		System.out.println("資料比數: " + count);
-				
+		System.out.println("資料比數: " + count);			
 	}
 }
