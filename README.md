@@ -66,3 +66,14 @@ Practice - Spring20220109
 - org.springframework.cglib.proxy.MethodInterceptor
 
 
+20220823
+- AOP 
+- AspectJ 
+- Pointcuts
+- spring-aop-4.3.xsd
+- @Before, @After, @AfterReturning, @AfterThrowing, @Around 
+- PointCut EL 
+- AOP XML 
+- @EnableAspectJAutoProxy 
+
+
