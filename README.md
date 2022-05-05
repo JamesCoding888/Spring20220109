@@ -76,4 +76,11 @@ Practice - Spring20220109
 - AOP XML 
 - @EnableAspectJAutoProxy 
 
+20220827
+- AOP Introduction 
+- @DeclareParents 
+- JDBCTemplate 
+- c3p0 
+- Eclipse MySQL Data Source Explorer
+
 
