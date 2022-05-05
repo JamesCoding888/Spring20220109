@@ -13,6 +13,5 @@ public class UpdateEmp {
 		int rowcount = jdbcTemplate.update(sql, "ladygaga", 27, id); // "anita", 27, id 就是 sql [?] 號的順序
 		System.out.println("Update rowcount: " + rowcount);
 		
-	}
-	
+	}	
 }
