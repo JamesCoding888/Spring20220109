@@ -32,7 +32,7 @@ Practice - Spring20220109
 - context:property-placeholder (外部資源) 
 - FactoryBean
 
-20220813
+20210813
 - @Autowire 
 - @Qualifier
 - Spring JavaConfig 
@@ -45,7 +45,7 @@ Practice - Spring20220109
 - <context:include-filter type="annotation">  
 - use-default-filters="true"
 
-20220816
+20210816
 - @Autowired
 - @Qualifier 
 - @Required 
@@ -56,7 +56,7 @@ Practice - Spring20220109
 - Google.gson 應用 
 - person.json 外部配置
 
-20220820
+20210820
 - Proxy 
 - 靜態代理 
 - 動態代理 
@@ -66,7 +66,7 @@ Practice - Spring20220109
 - org.springframework.cglib.proxy.MethodInterceptor
 
 
-20220823
+20210823
 - AOP 
 - AspectJ 
 - Pointcuts
@@ -76,11 +76,20 @@ Practice - Spring20220109
 - AOP XML 
 - @EnableAspectJAutoProxy 
 
-20220827
+20210827
 - AOP Introduction 
 - @DeclareParents 
 - JDBCTemplate 
 - c3p0 
 - Eclipse MySQL Data Source Explorer
+
+
+20210830
+- Spring ORM Mapper 應用 
+- BeanPropertyRowMapper
+- jdbcTemplate.query 
+- jdbcTemplate.updat
+- jdbcTemplate.batchUpdate 
+
 
 
