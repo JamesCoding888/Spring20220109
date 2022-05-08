@@ -90,6 +90,10 @@ Practice - Spring20220109
 - jdbcTemplate.query 
 - jdbcTemplate.updat
 - jdbcTemplate.batchUpdate 
-
-
-
+- Transactional 
+- propagation 
+- isolation 
+- rollbackFor 
+- noRollbackFor 
+- timeout 
+- readOnly
