@@ -1,9 +1,9 @@
 package com.study.spring2.case06.tx;
-import org.springframework.context.ApplicationContext;      
+import org.springframework.context.ApplicationContext;       
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import com.study.spring2.case06.tx.controller.BookController;
-public class BuyBook {
+import com.study.spring2.case06.tx.controller.BookControllerException;
+public class BuyBookException {
 	public static void main(String[] args) {
 		// [{wid=1, money=100}]
 		// [{sid=1, bid=1, amount=3}]
@@ -12,9 +12,9 @@ public class BuyBook {
 		// [{sid=1, bid=1, amount=2}]
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
 		JdbcTemplate jdbcTemplate = ctx.getBean("jdbcTemplate", JdbcTemplate.class);	
-		BookController bookController = ctx.getBean("bookControllerImpl", BookController.class);
+		BookControllerException bookControllerException = ctx.getBean("bookControllerImplException", BookControllerException.class);
 		int wid = 1;
 		int bid = 1;
-		bookController.buyBook(wid, bid);
+		bookControllerException.buyBook(wid, bid);
 	}
 }

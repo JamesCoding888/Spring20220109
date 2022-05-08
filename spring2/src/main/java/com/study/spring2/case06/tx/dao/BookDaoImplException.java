@@ -1,9 +1,11 @@
 package com.study.spring2.case06.tx.dao;
-import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.beans.factory.annotation.Autowired;   
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import com.study.spring2.case06.tx.exception.InsufficientAmount;
+import com.study.spring2.case06.tx.exception.InsufficientQuantity;
 @Repository
-public class BookDaoImpl implements BookDao {
+public class BookDaoImplException implements BookDaoException {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -15,7 +17,7 @@ public class BookDaoImpl implements BookDao {
 	}
 
 	@Override
-	public Integer updateStock(Integer bid) {
+	public Integer updateStock(Integer bid) throws InsufficientQuantity {
 		
 		// 庫存減 1
 		/*****************************************************************
@@ -29,7 +31,7 @@ public class BookDaoImpl implements BookDao {
 		Object[] args = new Object[] {bid};		
 		int amount = jdbcTemplate.queryForObject(sql, args, Integer.class);
 		if(amount<=0) {
-			throw new RuntimeException("庫存不足");
+			throw new InsufficientQuantity();
 		}
 		// 修改庫存
 		sql = "update stock set amount = amount - 1 where bid=?";
@@ -38,7 +40,7 @@ public class BookDaoImpl implements BookDao {
 	}
 
 	@Override
-	public Integer updateWallet(Integer wid, Integer money) {
+	public Integer updateWallet(Integer wid, Integer money) throws InsufficientAmount {
 		// 減去總金額
 		/******************************************************************
 		String sql = "update wallet set money = money - ? where wid=?";		
@@ -51,7 +53,7 @@ public class BookDaoImpl implements BookDao {
 		Object[] args = new Object[] {wid};
 		int walletMoney = jdbcTemplate.queryForObject(sql, args, Integer.class);
 		if(walletMoney < money) {
-			throw new RuntimeException("餘額不足");
+			throw new InsufficientAmount();
 		}
 		// 修改餘額
 		sql = "update wallet set money = money - ? where wid=?";
