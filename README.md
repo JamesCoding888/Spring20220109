@@ -90,6 +90,9 @@ Practice - Spring20220109
 - jdbcTemplate.query 
 - jdbcTemplate.updat
 - jdbcTemplate.batchUpdate 
+
+
+20210903
 - Transactional 
 - propagation 
 - isolation 
